@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "803407434637",
+    "project_id": "daily-memo-60d34",
+    "storage_bucket": "daily-memo-60d34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803407434637:android:f9c60fb89a0dfb610fe3c4",
+        "android_client_info": {
+          "package_name": "com.example.daily_memo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhGlAx7kdr9l8LU9bh7vSuXKZJ4MJ9DHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
