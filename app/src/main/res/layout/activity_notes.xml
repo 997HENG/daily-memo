@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".NotesActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="281dp"
+        tools:layout_editor_absoluteY="291dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/toMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#ECDADA"
+        app:srcCompat="@mipmap/earth"
+        tools:layout_editor_absoluteX="355dp"
+        tools:layout_editor_absoluteY="671dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
