@@ -3,9 +3,8 @@ package com.example.daily_memo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,43 +37,47 @@ public class RegisterActivity extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener() {
 
-            private String txtEmail = "";
-            private String txtPassword = "";
+            private String txtEmail ;
+            private String txtPassword ;
 
             @Override
             public void onClick(View v) {
-                txtEmail = email.getText().toString();
-                txtPassword = password.getText().toString();
-
-                if(isEmailAndPasswordEmpty(txtEmail,txtPassword)){
-
+                getEmailAndPassword();
+                if(isEmailAndPasswordEmpty()){
                     emptyCredentials();
                     return;
                 }
-                if(isPasswordTooShort(txtPassword)){
+                if(isPasswordTooShort()){
                     passwordTooShort();
                     return;
                 }
-                registerUser(txtEmail,txtPassword);
+                registerUser();
             }
 
-            private boolean isEmailAndPasswordEmpty (String email,String password){
-                return email.isEmpty() || password.isEmpty();
+            private void getEmailAndPassword(){
+                txtEmail = email.getText().toString();
+                txtPassword = password.getText().toString();
             }
 
-            private boolean isPasswordTooShort (String password){
-                return (password.length()<6);
+            private boolean isEmailAndPasswordEmpty (){
+                return txtEmail == null || txtPassword == null || txtEmail.isEmpty() || txtPassword.isEmpty();
             }
 
-            private void registerUser(String email,String password){
-                auth.createUserWithEmailAndPassword(email,password)
+            private boolean isPasswordTooShort (){
+                return (txtPassword.length()<6);
+            }
+
+            private void registerUser(){
+                auth.createUserWithEmailAndPassword(txtEmail,txtPassword)
                         .addOnCompleteListener(RegisterActivity.this,
                                 new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if(task.isSuccessful()){
                                             registerUserSuccessful();
-                                            sendEmailVerification(auth);
+                                            sendEmailVerification();
+                                            toLogin();
+                                            finish();
                                         }else{
                                             registrationFailed();
                                         }
@@ -83,8 +86,12 @@ public class RegisterActivity extends AppCompatActivity {
                         );
             }
 
-            private void sendEmailVerification(FirebaseAuth auth){
+            private void sendEmailVerification(){
                 auth.getCurrentUser().sendEmailVerification();
+            }
+
+            private void toLogin(){
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
 
             private void registerUserSuccessful(){
