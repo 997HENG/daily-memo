@@ -6,12 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".NotesActivity">
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="291dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="281dp"
-        tools:layout_editor_absoluteY="291dp" />
+        tools:layout_editor_absoluteY="291dp" >
+
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/toMap"
@@ -22,5 +30,11 @@
         app:srcCompat="@mipmap/earth"
         tools:layout_editor_absoluteX="355dp"
         tools:layout_editor_absoluteY="671dp" />
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Out" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
