@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="email"
-            android:inputType="textPersonName" />
+            android:inputType="textWebEmailAddress|textPersonName" />
 
         <EditText
             android:id="@+id/passwordForRegister"
@@ -27,12 +27,21 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="password"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName|textPassword" />
 
-        <Button
-            android:id="@+id/register"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="register" />
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:text="register" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

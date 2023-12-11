@@ -4,35 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:backgroundTint="#FFFFFF"
     tools:context=".LoginActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/emailForLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="email"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/passwordForLogin"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="password"
-            android:inputType="textPersonName" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/login"
+            <EditText
+                android:id="@+id/emailForLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="email"
+                android:inputType="textWebEmailAddress|textPersonName" />
+
+            <EditText
+                android:id="@+id/passwordForLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="password"
+                android:inputType="textPersonName|textPassword" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="login" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:text="login"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

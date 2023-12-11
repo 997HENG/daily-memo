@@ -6,35 +6,101 @@
     android:layout_height="match_parent"
     tools:context=".NotesActivity">
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="291dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="281dp"
-        tools:layout_editor_absoluteY="291dp" >
+        tools:layout_editor_absoluteY="291dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="filter"
+                android:textSize="24sp" />
+
+            <Spinner
+                android:id="@+id/spn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="20"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/logOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:gravity="center"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="6dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="6dp"
+                        android:text="Log Out" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/toMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        app:backgroundTint="#ECDADA"
+                        app:srcCompat="@mipmap/earth" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/toMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:backgroundTint="#ECDADA"
-        app:srcCompat="@mipmap/earth"
-        tools:layout_editor_absoluteX="355dp"
-        tools:layout_editor_absoluteY="671dp" />
-
-    <Button
-        android:id="@+id/logOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
 
         login = findViewById(R.id.toLogin);
         register = findViewById(R.id.toRegister);
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,NotesActivity.class));
             finish();
         }
-        
+
     }
     public boolean isLogin(){
         return auth.getCurrentUser() != null;

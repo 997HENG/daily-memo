@@ -158,11 +158,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
-        LatLng miaoli = new LatLng(
-                24.57, 120.82);
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(miaoli));
 
+        Intent intentN = new Intent();
+        intentN=this.getIntent();
+        Bundle fromNote = intentN.getExtras();
+        if(fromNote == null) {
+            LatLng miaoli = new LatLng(
+                    24.57, 120.82);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(miaoli,14));
+        }else{
+            LatLng fromNotes = new LatLng(fromNote.getDouble("latitude"),fromNote.getDouble("longitude"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(fromNotes,17));
+        }
 
     }
 

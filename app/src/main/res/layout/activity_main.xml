@@ -13,16 +13,49 @@
         tools:layout_editor_absoluteX="259dp"
         tools:layout_editor_absoluteY="354dp">
 
-        <Button
-            android:id="@+id/toLogin"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:layout_weight="4"
+            app:srcCompat="@mipmap/ic_launcher" />
 
-        <Button
-            android:id="@+id/toRegister"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="REGISTER" />
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="Daily Memo"
+            android:textColor="#000000"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/toLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="Login"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/toRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:text="REGISTER"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
